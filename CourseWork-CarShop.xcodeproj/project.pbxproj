@@ -10,6 +10,7 @@
 		390377731A376083002D2C3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 390377721A376083002D2C3F /* main.cpp */; };
 		393398A61A3782D3000817B5 /* car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398A41A3782D3000817B5 /* car.cpp */; };
 		393398AA1A3793B5000817B5 /* rarecar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398A81A3793B5000817B5 /* rarecar.cpp */; };
+		393398AD1A379BB5000817B5 /* newcar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398AB1A379BB5000817B5 /* newcar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		393398A51A3782D3000817B5 /* car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 		393398A81A3793B5000817B5 /* rarecar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rarecar.cpp; sourceTree = "<group>"; };
 		393398A91A3793B5000817B5 /* rarecar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rarecar.h; sourceTree = "<group>"; };
+		393398AB1A379BB5000817B5 /* newcar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newcar.cpp; sourceTree = "<group>"; };
+		393398AC1A379BB5000817B5 /* newcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newcar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		393398A21A378256000817B5 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				393398AC1A379BB5000817B5 /* newcar.h */,
 				393398A91A3793B5000817B5 /* rarecar.h */,
 				393398A51A3782D3000817B5 /* car.h */,
 			);
@@ -84,6 +88,7 @@
 			children = (
 				393398A41A3782D3000817B5 /* car.cpp */,
 				393398A81A3793B5000817B5 /* rarecar.cpp */,
+				393398AB1A379BB5000817B5 /* newcar.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				393398A61A3782D3000817B5 /* car.cpp in Sources */,
 				390377731A376083002D2C3F /* main.cpp in Sources */,
 				393398AA1A3793B5000817B5 /* rarecar.cpp in Sources */,
+				393398AD1A379BB5000817B5 /* newcar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

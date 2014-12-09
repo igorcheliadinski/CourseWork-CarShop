@@ -7,9 +7,6 @@
 //
 
 #include "rarecar.h"
-#include <iostream>
-#include <string.h>
-using namespace std;
 
 RareCar::RareCar(string make, string model, int year, string fuelType, string transmission, double price, bool hasPersonalDriver) : Car(make, model, year, fuelType, transmission, price) {
     this->_hasPersonalDriver = hasPersonalDriver;

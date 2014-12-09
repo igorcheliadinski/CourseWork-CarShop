@@ -10,7 +10,6 @@
 #define __CourseWork_CarShop__car__
 
 #include <iostream>
-#include <string.h>
 using namespace std;
 
 // Car class

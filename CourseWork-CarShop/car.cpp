@@ -7,9 +7,6 @@
 //
 
 #include "car.h"
-#include <iostream>
-#include <string.h>
-using namespace std;
 
 // Constructor for Car class
 Car::Car(string mark, string model, int year, string fuelType, string transmission, double price) {

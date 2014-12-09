@@ -10,9 +10,6 @@
 #define __CourseWork_CarShop__rarecar__
 
 #include "car.h"
-#include <iostream>
-#include <string.h>
-using namespace std;
 
 // Class for rare cars
 class RareCar : public Car {
