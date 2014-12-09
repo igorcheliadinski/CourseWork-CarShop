@@ -15,8 +15,7 @@ using namespace std;
 
 // Car class
 class Car {
-    
-private:
+protected:
     string _mark;
     string _model;
     int _year;
