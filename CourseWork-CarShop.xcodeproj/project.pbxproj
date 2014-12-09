@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		390377731A376083002D2C3F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 390377721A376083002D2C3F /* main.cpp */; };
+		393398A61A3782D3000817B5 /* car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398A41A3782D3000817B5 /* car.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		3903776F1A376083002D2C3F /* CourseWork-CarShop */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CourseWork-CarShop"; sourceTree = BUILT_PRODUCTS_DIR; };
 		390377721A376083002D2C3F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		393398A41A3782D3000817B5 /* car.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = car.cpp; sourceTree = "<group>"; };
+		393398A51A3782D3000817B5 /* car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = car.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,27 @@
 		390377711A376083002D2C3F /* CourseWork-CarShop */ = {
 			isa = PBXGroup;
 			children = (
+				393398A31A378278000817B5 /* Classes */,
+				393398A21A378256000817B5 /* Headers */,
 				390377721A376083002D2C3F /* main.cpp */,
 			);
 			path = "CourseWork-CarShop";
+			sourceTree = "<group>";
+		};
+		393398A21A378256000817B5 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				393398A51A3782D3000817B5 /* car.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		393398A31A378278000817B5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				393398A41A3782D3000817B5 /* car.cpp */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393398A61A3782D3000817B5 /* car.cpp in Sources */,
 				390377731A376083002D2C3F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +254,7 @@
 				390377781A376083002D2C3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
