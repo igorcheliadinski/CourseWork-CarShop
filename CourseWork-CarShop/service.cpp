@@ -12,8 +12,10 @@
 #include "usedcar.h"
 #include <iomanip>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <list>
+#include <math.h>
 
 void sellCar() {
     string mark, model, fuelType, transmission;
@@ -51,14 +53,24 @@ void sellCar() {
         cin >> condition;
         
         UsedCar *car = new UsedCar(mark, model, year, fuelType, transmission, price, condition);
-        list<UsedCar*> dataSet;
-        dataSet.insert(dataSet.begin(), car);
         ofstream output;
-        output.open("zelenka.bin", std::ios_base::app);
-        output << &dataSet;
+        output.open("usedCars.txt", std::ios_base::app);
+        output << car->getMark() + " ";
+        output << car->getModel() + " ";
+        output << to_string( car->getYear() ) + " ";
+        output << car->getFuelType() + " ";
+        output << car->getTransmission() + " ";
+        output << to_string( car->getPrice() ) + " ";
+        output << car->getCondition();
+        output << endl;
         output.close();
-        ifstream input;
-        input.open("zelenka.bin");
+        cout << "Success! Used car has been added!" << endl;
+//        ifstream input;
+//        input.open("usedCars.txt");
+//        while (input >> mark >> model >> year >> fuelType >> transmission >> price >> condition) {
+//            cout << mark;
+//        }
+        
     } else if (type == 2) {
         int guarantee;
         
@@ -66,12 +78,37 @@ void sellCar() {
         cin >> guarantee;
         
         NewCar *car = new NewCar(mark, model, year, fuelType, transmission, price, guarantee);
+        ofstream output;
+        output.open("newCars.txt", std::ios_base::app);
+        output << car->getMark() + " ";
+        output << car->getModel() + " ";
+        output << to_string( car->getYear() ) + " ";
+        output << car->getFuelType() + " ";
+        output << car->getTransmission() + " ";
+        output << to_string( car->getPrice() ) + " ";
+        output << to_string( car->getGuarantee() );
+        output << endl;
+        output.close();
+        cout << "Success! New car has been added!" << endl;
     } else if (type == 3) {
-        bool hasPersonalDriver;
+        string hasPersonalDriver;
         
         cout << "Have car personal driver? ";
         cin >> hasPersonalDriver;
         
         RareCar *car = new RareCar(mark, model, year, fuelType, transmission, price, hasPersonalDriver);
+        ofstream output;
+        output.open("rareCars.txt", std::ios_base::app);
+        output << car->getMark() + " ";
+        output << car->getModel() + " ";
+        output << to_string( car->getYear() ) + " ";
+        output << car->getFuelType() + " ";
+        output << car->getTransmission() + " ";
+        output << to_string( car->getPrice() ) + " ";
+        output << car->getPersonalDriverInfo();
+        output << endl;
+        output.close();
+        cout << "Success! Rare car has been added!" << endl;
     }
+    cout << "Write any char to continue...";
 }

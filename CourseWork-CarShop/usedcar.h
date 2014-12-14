@@ -22,7 +22,4 @@ public:
     void setCondition(string);
 };
 
-istream& operator>>(istream& is, UsedCar& car);
-ostream& operator<<(ostream& os, const UsedCar& car);
-
 #endif /* defined(__CourseWork_CarShop__usedcar__) */

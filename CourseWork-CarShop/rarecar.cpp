@@ -8,14 +8,14 @@
 
 #include "rarecar.h"
 
-RareCar::RareCar(string make, string model, int year, string fuelType, string transmission, double price, bool hasPersonalDriver) : Car(make, model, year, fuelType, transmission, price) {
+RareCar::RareCar(string make, string model, int year, string fuelType, string transmission, double price, string hasPersonalDriver) : Car(make, model, year, fuelType, transmission, price) {
     this->_hasPersonalDriver = hasPersonalDriver;
 }
 
 // Getter and setter for personal driver with car
-bool RareCar::getPersonalDriverInfo(void) {
+string RareCar::getPersonalDriverInfo(void) {
     return this->_hasPersonalDriver;
 }
-void RareCar::setPersonalDriverInfo(bool hasPersonalDriver) {
+void RareCar::setPersonalDriverInfo(string hasPersonalDriver) {
     this->_hasPersonalDriver = hasPersonalDriver;
 }

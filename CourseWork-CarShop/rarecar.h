@@ -14,13 +14,13 @@
 // Class for rare cars
 class RareCar : public Car {
 private:
-    bool _hasPersonalDriver;
+    string _hasPersonalDriver;
     
 public:
-    RareCar(string make, string model, int year, string fuelType, string transmission, double price, bool hasPersonalDriver);
+    RareCar(string make, string model, int year, string fuelType, string transmission, double price, string hasPersonalDriver);
     
-    bool getPersonalDriverInfo(void);
-    void setPersonalDriverInfo(bool);
+    string getPersonalDriverInfo(void);
+    void setPersonalDriverInfo(string);
 };
 
 #endif /* defined(__CourseWork_CarShop__rarecar__) */
