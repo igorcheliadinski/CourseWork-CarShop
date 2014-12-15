@@ -64,13 +64,7 @@ void sellCar() {
         output << car->getCondition();
         output << endl;
         output.close();
-        cout << "Success! Used car has been added!" << endl;
-//        ifstream input;
-//        input.open("usedCars.txt");
-//        while (input >> mark >> model >> year >> fuelType >> transmission >> price >> condition) {
-//            cout << mark;
-//        }
-        
+        cout << "Success! Used car has been added!" << endl;        
     } else if (type == 2) {
         int guarantee;
         
@@ -130,7 +124,7 @@ void findCar() {
         while (input >> mark >> model >> year >> fuelType >> transmission >> price >> condition) {
             cars.push_back(new UsedCar(mark, model, year, fuelType, transmission, price, condition));
         }
-        cout << "By which field you want to find (mark - 1, year - 2, price - 3, transmission - 4)?";
+        cout << "By which field you want to find (mark - 1, year - 2, price - 3, transmission - 4)? ";
         cin >> type;
         
         if (type == 1) {
@@ -139,19 +133,246 @@ void findCar() {
             
             for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
                 if ((*it)->getMark() == mark) {
-                    cout << "car";
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Condition: " << (*it)->getCondition() << endl << endl;
                 }
             }
         } else if (type == 2) {
-            // Find by year
+            int yearFrom, yearTo;
+            cout << "Enter years interval.\nFrom: ";
+            cin >> yearFrom;
+            cout << "To: ";
+            cin >> yearTo;
+            
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( yearFrom < (*it)->getYear() && (*it)->getYear() < yearTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                }
+            }
         } else if (type == 3) {
-            // Find by price
+            double priceFrom, priceTo;
+            cout << "Enter price interval.\nFrom: ";
+            cin >> priceFrom;
+            cout << "To: ";
+            cin >> priceTo;
+            
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( priceFrom < (*it)->getPrice() && (*it)->getPrice() < priceTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                }
+            }
         } else if (type == 4) {
-            // Find by transmission
+            cout << "Enter transmission type: ";
+            cin >> transmission;
+            
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( transmission == (*it)->getTransmission() ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                }
+            }
         }
     } else if (type == 2) {
-        // Find New cars
+        int guarantee;
+        list<NewCar*> cars;
+        
+        ifstream input("newCars.txt");
+        while (input >> mark >> model >> year >> fuelType >> transmission >> price >> guarantee) {
+            cars.push_back(new NewCar(mark, model, year, fuelType, transmission, price, guarantee));
+        }
+        cout << "By which field you want to find (mark - 1, year - 2, price - 3, transmission - 4)? ";
+        cin >> type;
+        
+        if (type == 1) {
+            cout << "What mark you want to find? ";
+            cin >> mark;
+            
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ((*it)->getMark() == mark) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                }
+            }
+        } else if (type == 2) {
+            int yearFrom, yearTo;
+            cout << "Enter years interval.\nFrom: ";
+            cin >> yearFrom;
+            cout << "To: ";
+            cin >> yearTo;
+            
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( yearFrom < (*it)->getYear() && (*it)->getYear() < yearTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                }
+            }
+        } else if (type == 3) {
+            double priceFrom, priceTo;
+            cout << "Enter price interval.\nFrom: ";
+            cin >> priceFrom;
+            cout << "To: ";
+            cin >> priceTo;
+            
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( priceFrom < (*it)->getPrice() && (*it)->getPrice() < priceTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                }
+            }
+        } else if (type == 4) {
+            cout << "Enter transmission type: ";
+            cin >> transmission;
+            
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( transmission == (*it)->getTransmission() ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                }
+            }
+        }
     } else if (type == 3) {
-        // Find Rare cars
+        string hasPersonalDriver;
+        list<RareCar*> cars;
+        
+        ifstream input("rareCars.txt");
+        while (input >> mark >> model >> year >> fuelType >> transmission >> price >> hasPersonalDriver) {
+            cars.push_back(new RareCar(mark, model, year, fuelType, transmission, price, hasPersonalDriver));
+        }
+        cout << "By which field you want to find (mark - 1, year - 2, price - 3, transmission - 4)? ";
+        cin >> type;
+        
+        if (type == 1) {
+            cout << "What mark you want to find? ";
+            cin >> mark;
+            
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ((*it)->getMark() == mark) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                }
+            }
+        } else if (type == 2) {
+            int yearFrom, yearTo;
+            cout << "Enter years interval.\nFrom: ";
+            cin >> yearFrom;
+            cout << "To: ";
+            cin >> yearTo;
+            
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( yearFrom < (*it)->getYear() && (*it)->getYear() < yearTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                }
+            }
+        } else if (type == 3) {
+            double priceFrom, priceTo;
+            cout << "Enter price interval.\nFrom: ";
+            cin >> priceFrom;
+            cout << "To: ";
+            cin >> priceTo;
+            
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( priceFrom < (*it)->getPrice() && (*it)->getPrice() < priceTo ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                }
+            }
+        } else if (type == 4) {
+            cout << "Enter transmission type: ";
+            cin >> transmission;
+            
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ( transmission == (*it)->getTransmission() ) {
+                    cout << endl;
+                    cout << "Car found!" << endl;
+                    cout << "Mark: " << (*it)->getMark() << endl;
+                    cout << "Model: " << (*it)->getModel() << endl;
+                    cout << "Year: " << (*it)->getYear() << endl;
+                    cout << "Fuel Type: " << (*it)->getFuelType() << endl;
+                    cout << "Transmission: " << (*it)->getTransmission() << endl;
+                    cout << "Price: " << (*it)->getPrice() << endl;
+                    cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                }
+            }
+        }
     }
 }
