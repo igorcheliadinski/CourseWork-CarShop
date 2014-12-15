@@ -13,6 +13,8 @@
 		393398AD1A379BB5000817B5 /* newcar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398AB1A379BB5000817B5 /* newcar.cpp */; };
 		393398B11A37A278000817B5 /* usedcar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398AF1A37A278000817B5 /* usedcar.cpp */; };
 		393398B51A37AB3F000817B5 /* service.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393398B31A37AB3F000817B5 /* service.cpp */; };
+		393F99131A3F9F6400C216D6 /* writerservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393F99111A3F9F6400C216D6 /* writerservice.cpp */; };
+		393F99161A3FA9EA00C216D6 /* readerservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393F99141A3FA9EA00C216D6 /* readerservice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,10 @@
 		393398B01A37A278000817B5 /* usedcar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usedcar.h; sourceTree = "<group>"; };
 		393398B31A37AB3F000817B5 /* service.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = service.cpp; sourceTree = "<group>"; };
 		393398B41A37AB3F000817B5 /* service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = service.h; sourceTree = "<group>"; };
+		393F99111A3F9F6400C216D6 /* writerservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = writerservice.cpp; sourceTree = "<group>"; };
+		393F99121A3F9F6400C216D6 /* writerservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writerservice.h; sourceTree = "<group>"; };
+		393F99141A3FA9EA00C216D6 /* readerservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = readerservice.cpp; sourceTree = "<group>"; };
+		393F99151A3FA9EA00C216D6 /* readerservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readerservice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 		393398A21A378256000817B5 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				393F99151A3FA9EA00C216D6 /* readerservice.h */,
+				393F99121A3F9F6400C216D6 /* writerservice.h */,
 				393398B41A37AB3F000817B5 /* service.h */,
 				393398B01A37A278000817B5 /* usedcar.h */,
 				393398AC1A379BB5000817B5 /* newcar.h */,
@@ -107,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				393398B31A37AB3F000817B5 /* service.cpp */,
+				393F99111A3F9F6400C216D6 /* writerservice.cpp */,
+				393F99141A3FA9EA00C216D6 /* readerservice.cpp */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -169,9 +179,11 @@
 			files = (
 				393398A61A3782D3000817B5 /* car.cpp in Sources */,
 				393398B51A37AB3F000817B5 /* service.cpp in Sources */,
+				393F99131A3F9F6400C216D6 /* writerservice.cpp in Sources */,
 				390377731A376083002D2C3F /* main.cpp in Sources */,
 				393398AA1A3793B5000817B5 /* rarecar.cpp in Sources */,
 				393398AD1A379BB5000817B5 /* newcar.cpp in Sources */,
+				393F99161A3FA9EA00C216D6 /* readerservice.cpp in Sources */,
 				393398B11A37A278000817B5 /* usedcar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,13 +13,8 @@
 #include "newcar.h"
 #include "rarecar.h"
 
-class WriterService {
-public:
-    WriterService(Car);
-    
-    void saveCar(UsedCar);
-    void saveCar(NewCar);
-    void saveCar(RareCar);
-};
+void saveCar(UsedCar*);
+void saveCar(NewCar*);
+void saveCar(RareCar*);
 
 #endif /* defined(__CourseWork_CarShop__writerservice__) */

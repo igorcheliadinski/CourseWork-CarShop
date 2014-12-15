@@ -10,6 +10,7 @@
 #include "rarecar.h"
 #include "newcar.h"
 #include "usedcar.h"
+#include "writerservice.h"
 #include <iomanip>
 #include <fstream>
 #include <sstream>
@@ -53,17 +54,7 @@ void sellCar() {
         cin >> condition;
         
         UsedCar *car = new UsedCar(mark, model, year, fuelType, transmission, price, condition);
-        ofstream output;
-        output.open("usedCars.txt", std::ios_base::app);
-        output << car->getMark() + " ";
-        output << car->getModel() + " ";
-        output << to_string( car->getYear() ) + " ";
-        output << car->getFuelType() + " ";
-        output << car->getTransmission() + " ";
-        output << to_string( car->getPrice() ) + " ";
-        output << car->getCondition();
-        output << endl;
-        output.close();
+        saveCar(car);
         cout << "Success! Used car has been added!" << endl;        
     } else if (type == 2) {
         int guarantee;
@@ -72,17 +63,7 @@ void sellCar() {
         cin >> guarantee;
         
         NewCar *car = new NewCar(mark, model, year, fuelType, transmission, price, guarantee);
-        ofstream output;
-        output.open("newCars.txt", std::ios_base::app);
-        output << car->getMark() + " ";
-        output << car->getModel() + " ";
-        output << to_string( car->getYear() ) + " ";
-        output << car->getFuelType() + " ";
-        output << car->getTransmission() + " ";
-        output << to_string( car->getPrice() ) + " ";
-        output << to_string( car->getGuarantee() );
-        output << endl;
-        output.close();
+        saveCar(car);
         cout << "Success! New car has been added!" << endl;
     } else if (type == 3) {
         string hasPersonalDriver;
@@ -91,17 +72,7 @@ void sellCar() {
         cin >> hasPersonalDriver;
         
         RareCar *car = new RareCar(mark, model, year, fuelType, transmission, price, hasPersonalDriver);
-        ofstream output;
-        output.open("rareCars.txt", std::ios_base::app);
-        output << car->getMark() + " ";
-        output << car->getModel() + " ";
-        output << to_string( car->getYear() ) + " ";
-        output << car->getFuelType() + " ";
-        output << car->getTransmission() + " ";
-        output << to_string( car->getPrice() ) + " ";
-        output << car->getPersonalDriverInfo();
-        output << endl;
-        output.close();
+        saveCar(car);
         cout << "Success! Rare car has been added!" << endl;
     }
     cout << "Write any char to continue...";
