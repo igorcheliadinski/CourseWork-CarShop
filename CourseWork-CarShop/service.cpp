@@ -112,3 +112,46 @@ void sellCar() {
     }
     cout << "Write any char to continue...";
 }
+
+void findCar() {
+    string mark, model, fuelType, transmission;
+    int type, year;
+    double price;
+    
+    cout << "Which car type do you want to find?" << endl;
+    cout << "1) Used car\n2) New car\n3) Rare car" << endl;
+    cin >> type;
+    
+    if (type == 1) {
+        string condition;
+        list<UsedCar*> cars;
+        
+        ifstream input("usedCars.txt");
+        while (input >> mark >> model >> year >> fuelType >> transmission >> price >> condition) {
+            cars.push_back(new UsedCar(mark, model, year, fuelType, transmission, price, condition));
+        }
+        cout << "By which field you want to find (mark - 1, year - 2, price - 3, transmission - 4)?";
+        cin >> type;
+        
+        if (type == 1) {
+            cout << "What mark you want to find? ";
+            cin >> mark;
+            
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                if ((*it)->getMark() == mark) {
+                    cout << "car";
+                }
+            }
+        } else if (type == 2) {
+            // Find by year
+        } else if (type == 3) {
+            // Find by price
+        } else if (type == 4) {
+            // Find by transmission
+        }
+    } else if (type == 2) {
+        // Find New cars
+    } else if (type == 3) {
+        // Find Rare cars
+    }
+}

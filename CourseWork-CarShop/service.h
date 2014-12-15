@@ -12,5 +12,6 @@
 #include <stdio.h>
 
 void sellCar();
+void findCar();
 
 #endif /* defined(__CourseWork_CarShop__service__) */

@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
         if (variant == 1) {
             sellCar();
         } else {
-            // find car
+            findCar();
         }
     } while (cin >> code);
     
