@@ -9,6 +9,14 @@
 #ifndef __CourseWork_CarShop__readerservice__
 #define __CourseWork_CarShop__readerservice__
 
+#include "usedcar.h"
+#include "newcar.h"
+#include "rarecar.h"
+
 #include <stdio.h>
+
+UsedCar findUsedCar(string mark, string model, int year, string fuelType, string transmission, double price, string condition);
+NewCar findNewCar(string mark, string model, int year, string fuelType, string transmission, double price, int guarantee);
+RareCar findRareCar(string mark, string model, int year, string fuelType, string transmission, double price, string personalDriver);
 
 #endif /* defined(__CourseWork_CarShop__readerservice__) */
