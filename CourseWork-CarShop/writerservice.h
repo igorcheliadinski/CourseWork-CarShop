@@ -17,4 +17,8 @@ void saveCar(UsedCar*);
 void saveCar(NewCar*);
 void saveCar(RareCar*);
 
+void updateCar(UsedCar*, string, string, int, string, string, double, string);
+void updateCar(NewCar*, string, string, int, string, string, double, int);
+void updateCar(RareCar*, string, string, int, string, string, double, string);
+
 #endif /* defined(__CourseWork_CarShop__writerservice__) */

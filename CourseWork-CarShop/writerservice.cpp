@@ -50,3 +50,33 @@ void saveCar(RareCar* car) {
     output << endl;
     output.close();
 }
+
+void updateCar(UsedCar* car, string newMark, string newModel, int newYear, string newFuelType, string newTransmission, double newPrice, string newCondition) {
+    car -> setMark(newMark);
+    car -> setModel(newModel);
+    car -> setYear(newYear);
+    car -> setFuelType(newFuelType);
+    car -> setTransmission(newTransmission);
+    car -> setPrice(newPrice);
+    car -> setCondition(newCondition);
+}
+
+void updateCar(NewCar* car, string newMark, string newModel, int newYear, string newFuelType, string newTransmission, double newPrice, int newGuarantee) {
+    car -> setMark(newMark);
+    car -> setModel(newModel);
+    car -> setYear(newYear);
+    car -> setFuelType(newFuelType);
+    car -> setTransmission(newTransmission);
+    car -> setPrice(newPrice);
+    car -> setGuarantee(newGuarantee);
+}
+
+void updateCar(RareCar* car, string newMark, string newModel, int newYear, string newFuelType, string newTransmission, double newPrice, string newPersonalDriver) {
+    car -> setMark(newMark);
+    car -> setModel(newModel);
+    car -> setYear(newYear);
+    car -> setFuelType(newFuelType);
+    car -> setTransmission(newTransmission);
+    car -> setPrice(newPrice);
+    car -> setPersonalDriverInfo(newPersonalDriver);
+}

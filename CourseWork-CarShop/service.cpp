@@ -113,50 +113,59 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newCondition;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newCondition;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setCondition(newCondition);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    
+                    string newMark, newModel, newFuelType, newTransmission, newCondition;
+                    int newYear;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New condition: ";
+                    cin >> newCondition;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newCondition);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("usedCars.txt");
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getCondition();
+                output << endl;
+            }
+            output.close();
         } else if (type == 2) {
             int yearFrom, yearTo;
             cout << "Enter years interval.\nFrom: ";
@@ -175,50 +184,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newCondition;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newCondition;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setCondition(newCondition);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newCondition;
+                    int newYear;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New condition: ";
+                    cin >> newCondition;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newCondition);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("usedCars.txt");
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getCondition();
+                output << endl;
+            }
+            output.close();
         } else if (type == 3) {
             double priceFrom, priceTo;
             cout << "Enter price interval.\nFrom: ";
@@ -237,51 +254,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newCondition;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newCondition;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setCondition(newCondition);
-                        saveCar((*it));
-                    } else {
-                        continue;
-                    }
                     
+                    if (update == "n")
+                        continue;
+                    string newMark, newModel, newFuelType, newTransmission, newCondition;
+                    int newYear;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New condition: ";
+                    cin >> newCondition;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newCondition);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("usedCars.txt");
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getCondition();
+                output << endl;
+            }
+            output.close();
         } else if (type == 4) {
             cout << "Enter transmission type: ";
             cin >> transmission;
@@ -297,50 +321,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newCondition;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newCondition;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setCondition(newCondition);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newCondition;
+                    int newYear;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New condition: ";
+                    cin >> newCondition;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newCondition);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("usedCars.txt");
+            for (list<UsedCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getCondition();
+                output << endl;
+            }
+            output.close();
         }
     } else if (type == 2) {
         int guarantee;
@@ -368,50 +400,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission;
-                        int newYear, newGuarantee;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newGuarantee;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setGuarantee(newGuarantee);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newGuarantee);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("newCars.txt");
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getGuarantee();
+                output << endl;
+            }
+            output.close();
         } else if (type == 2) {
             int yearFrom, yearTo;
             cout << "Enter years interval.\nFrom: ";
@@ -430,50 +470,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission;
-                        int newYear, newGuarantee;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newGuarantee;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setGuarantee(newGuarantee);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newGuarantee);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("newCars.txt");
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getGuarantee();
+                output << endl;
+            }
+            output.close();
         } else if (type == 3) {
             double priceFrom, priceTo;
             cout << "Enter price interval.\nFrom: ";
@@ -492,50 +540,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission;
-                        int newYear, newGuarantee;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newGuarantee;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setGuarantee(newGuarantee);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newGuarantee);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("newCars.txt");
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getGuarantee();
+                output << endl;
+            }
+            output.close();
         } else if (type == 4) {
             cout << "Enter transmission type: ";
             cin >> transmission;
@@ -551,50 +607,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission;
-                        int newYear, newGuarantee;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newGuarantee;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setGuarantee(newGuarantee);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newGuarantee);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("newCars.txt");
+            for (list<NewCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getGuarantee();
+                output << endl;
+            }
+            output.close();
         }
     } else if (type == 3) {
         string hasPersonalDriver;
@@ -622,50 +686,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newPersonalDriver;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("rareCars.txt");
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getPersonalDriverInfo();
+                output << endl;
+            }
+            output.close();
         } else if (type == 2) {
             int yearFrom, yearTo;
             cout << "Enter years interval.\nFrom: ";
@@ -684,50 +756,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newPersonalDriver;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("rareCars.txt");
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getPersonalDriverInfo();
+                output << endl;
+            }
+            output.close();
         } else if (type == 3) {
             double priceFrom, priceTo;
             cout << "Enter price interval.\nFrom: ";
@@ -746,50 +826,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newPersonalDriver;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("rareCars.txt");
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getPersonalDriverInfo();
+                output << endl;
+            }
+            output.close();
         } else if (type == 4) {
             cout << "Enter transmission type: ";
             cin >> transmission;
@@ -805,50 +893,58 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    
                     cout << "Do you want to update this car? (y/n)";
                     string update;
                     cin >> update;
-                    if (update == "y") {
-                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
-                        int newYear;
-                        double newPrice;
-                        
-                        cout << "Please update details for your car:" << endl;
-                        
-                        cout << "New Mark: ";
-                        cin >> newMark;
-                        
-                        cout << "New Model: ";
-                        cin >> newModel;
-                        
-                        cout << "New Year: ";
-                        cin >> newYear;
-                        
-                        cout << "New Fuel Type: ";
-                        cin >> newFuelType;
-                        
-                        cout << "New Transmission: ";
-                        cin >> newTransmission;
-                        
-                        cout << "New Price: ";
-                        cin >> newPrice;
-                        
-                        cout << "New condition: ";
-                        cin >> newPersonalDriver;
-                        
-                        (*it) -> setMark(newMark);
-                        (*it) -> setModel(newModel);
-                        (*it) -> setYear(newYear);
-                        (*it) -> setFuelType(newFuelType);
-                        (*it) -> setTransmission(newTransmission);
-                        (*it) -> setPrice(newPrice);
-                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
-                        saveCar((*it));
-                    } else {
+                    
+                    if (update == "n")
                         continue;
-                    }
+                    string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                    int newYear, newGuarantee;
+                    double newPrice;
+                    
+                    cout << "Please update details for your car:" << endl;
+                    
+                    cout << "New Mark: ";
+                    cin >> newMark;
+                    
+                    cout << "New Model: ";
+                    cin >> newModel;
+                    
+                    cout << "New Year: ";
+                    cin >> newYear;
+                    
+                    cout << "New Fuel Type: ";
+                    cin >> newFuelType;
+                    
+                    cout << "New Transmission: ";
+                    cin >> newTransmission;
+                    
+                    cout << "New Price: ";
+                    cin >> newPrice;
+                    
+                    cout << "New guarantee: ";
+                    cin >> newGuarantee;
+                    
+                    updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
+                    cout << "Car updated!" << endl;
+                    cout << "Write any char to continue...";
                 }
             }
+            
+            ofstream output("rareCars.txt");
+            for (list<RareCar*>::iterator it = cars.begin(); it != cars.end(); ++it) {
+                output << (*it) -> getMark() + " ";
+                output << (*it) -> getModel() + " ";
+                output << to_string( (*it) -> getYear() ) + " ";
+                output << (*it) -> getFuelType() + " ";
+                output << (*it) -> getTransmission() + " ";
+                output << to_string( (*it) -> getPrice() ) + " ";
+                output << (*it) -> getPersonalDriverInfo();
+                output << endl;
+            }
+            output.close();
         }
     }
 }
