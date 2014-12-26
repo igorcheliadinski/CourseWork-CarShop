@@ -113,6 +113,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newCondition;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newCondition;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setCondition(newCondition);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 2) {
@@ -133,6 +175,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newCondition;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newCondition;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setCondition(newCondition);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 3) {
@@ -153,6 +237,49 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newCondition;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newCondition;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setCondition(newCondition);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
+                    
                 }
             }
         } else if (type == 4) {
@@ -170,6 +297,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Condition: " << (*it)->getCondition() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newCondition;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newCondition;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setCondition(newCondition);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         }
@@ -199,6 +368,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission;
+                        int newYear, newGuarantee;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newGuarantee;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setGuarantee(newGuarantee);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 2) {
@@ -219,6 +430,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission;
+                        int newYear, newGuarantee;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newGuarantee;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setGuarantee(newGuarantee);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 3) {
@@ -239,6 +492,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission;
+                        int newYear, newGuarantee;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newGuarantee;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setGuarantee(newGuarantee);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 4) {
@@ -256,6 +551,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Guarantee: " << (*it)->getGuarantee() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission;
+                        int newYear, newGuarantee;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newGuarantee;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setGuarantee(newGuarantee);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         }
@@ -285,6 +622,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newPersonalDriver;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 2) {
@@ -305,6 +684,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newPersonalDriver;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 3) {
@@ -325,6 +746,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newPersonalDriver;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         } else if (type == 4) {
@@ -342,6 +805,48 @@ void findCar() {
                     cout << "Transmission: " << (*it)->getTransmission() << endl;
                     cout << "Price: " << (*it)->getPrice() << endl;
                     cout << "Personal Driver: " << (*it)->getPersonalDriverInfo() << endl << endl;
+                    cout << "Do you want to update this car? (y/n)";
+                    string update;
+                    cin >> update;
+                    if (update == "y") {
+                        string newMark, newModel, newFuelType, newTransmission, newPersonalDriver;
+                        int newYear;
+                        double newPrice;
+                        
+                        cout << "Please update details for your car:" << endl;
+                        
+                        cout << "New Mark: ";
+                        cin >> newMark;
+                        
+                        cout << "New Model: ";
+                        cin >> newModel;
+                        
+                        cout << "New Year: ";
+                        cin >> newYear;
+                        
+                        cout << "New Fuel Type: ";
+                        cin >> newFuelType;
+                        
+                        cout << "New Transmission: ";
+                        cin >> newTransmission;
+                        
+                        cout << "New Price: ";
+                        cin >> newPrice;
+                        
+                        cout << "New condition: ";
+                        cin >> newPersonalDriver;
+                        
+                        (*it) -> setMark(newMark);
+                        (*it) -> setModel(newModel);
+                        (*it) -> setYear(newYear);
+                        (*it) -> setFuelType(newFuelType);
+                        (*it) -> setTransmission(newTransmission);
+                        (*it) -> setPrice(newPrice);
+                        (*it) -> setPersonalDriverInfo(newPersonalDriver);
+                        saveCar((*it));
+                    } else {
+                        continue;
+                    }
                 }
             }
         }
