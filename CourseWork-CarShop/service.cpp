@@ -717,8 +717,8 @@ void findCar() {
                     cout << "New Price: ";
                     cin >> newPrice;
                     
-                    cout << "New guarantee: ";
-                    cin >> newGuarantee;
+                    cout << "New personal driver: ";
+                    cin >> newPersonalDriver;
                     
                     updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
                     cout << "Car updated!" << endl;
@@ -787,8 +787,8 @@ void findCar() {
                     cout << "New Price: ";
                     cin >> newPrice;
                     
-                    cout << "New guarantee: ";
-                    cin >> newGuarantee;
+                    cout << "New personal driver: ";
+                    cin >> newPersonalDriver;
                     
                     updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
                     cout << "Car updated!" << endl;
@@ -857,8 +857,8 @@ void findCar() {
                     cout << "New Price: ";
                     cin >> newPrice;
                     
-                    cout << "New guarantee: ";
-                    cin >> newGuarantee;
+                    cout << "New personal driver: ";
+                    cin >> newPersonalDriver;
                     
                     updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
                     cout << "Car updated!" << endl;
@@ -924,8 +924,8 @@ void findCar() {
                     cout << "New Price: ";
                     cin >> newPrice;
                     
-                    cout << "New guarantee: ";
-                    cin >> newGuarantee;
+                    cout << "New personal driver: ";
+                    cin >> newPersonalDriver;
                     
                     updateCar(*it, newMark, newModel, newYear, newFuelType, newTransmission, newPrice, newPersonalDriver);
                     cout << "Car updated!" << endl;
